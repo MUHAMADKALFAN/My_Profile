@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block data %}
+<div class="main-panel" style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px;">
+    <div class="content">
+        <div class="container-fluid" style="background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);">
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333;"><b>Customer Message and Details</b></h2>
+
+            <table class="table" style="width: 100%; border-collapse: collapse; font-size: 15px;">
+                <thead>
+                    <tr style="background-color: #007bff; color: white;">
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">#</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Name</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Email</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Message</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data1 %}
+                    <tr style="background-color: {% cycle '#ffffff' '#f1f1f1' %};">
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ forloop.counter }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.Name }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">
+                            <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ i.Email }}&su=Reply%20to%20the%20message%20you%20sent" target="_blank">
+                                {{ i.Email }}
+                            </a>
+                        </td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.Message }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6; text-align: center;">
+                            <a href="{% url 'customerdelete' id=i.id %}" style="text-decoration: none; color: red; font-weight: bold;">
+                                🗑️ Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

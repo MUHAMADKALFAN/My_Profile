@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block data %}
+<div class="main-panel">
+    <div class="content">
+        <div class="container-fluid">
+            <h2><b>Add certificate details</b></h2>
+            {% for i in data %}
+            <form class="forms-sample" action="{% url 'Momentoupdate' id=i.id %}" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="">Certificate Name:</label>
+                <input type="text" style="width: 80%;" value="{{i.Certificatename}}" name="Certificatename" class="form-control" id="Certificatename" placeholder="Write the name of the company or institute that issued the certificate to you.">
+              </div>
+              <div class="form-group">
+                <label for="">Position :</label>
+                <input type="text" style="width: 80%;" value="{{i.Position}}" name="Position" class="form-control" id="Position" placeholder="Please state in which position or why the certificate was obtained. Name">
+              </div>  
+                <div class="form-group">
+                  <label for="">Upload certificate image file:</label>
+                  <input type="file" style="width: 30%;" value="{{i.image}}" name="image" class="form-control" id="image" >
+                </div>
+                <div class="form-group">
+                  <label for="">Date of certificate:</label>
+                  <input type="date" id="Date" value="{{i.Date}}" name="Date" required><br>
+                </div>
+                <div class="form-group">
+                  <label for="description">Description:</label><br>
+                  <textarea id="description" value="{{i.description}}" name="description" rows="6" cols="100"placeholder="Write down what the certificate you received is for, what position, and how many days it has been like this. description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+              </form>
+              {% endfor %}  
+        </div>
+    </div>
+</div>
+{% endblock %}

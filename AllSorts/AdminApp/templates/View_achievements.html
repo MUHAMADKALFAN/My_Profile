@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block data %}
+<div class="main-panel" style="font-family: Arial, sans-serif; background-color: #f4f6f8; padding: 30px;">
+    <div class="content">
+        <div class="container-fluid" style="background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #2c3e50;"><b>Certificate Details</b></h2>
+
+            <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+                <thead>
+                    <tr style="background-color: #34495e; color: white;">
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">#</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Certificate Name</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Position</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Image</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Date</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Description</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Edit</th>
+                        <th style="padding: 12px; border: 1px solid #dee2e6;">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr style="background-color: {% cycle '#ffffff' '#f9f9f9' %};">
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ forloop.counter }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.Certificatename }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.Position }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6; text-align: center;">
+                            <img src="{{ i.image.url }}" alt="Certificate" style="width: 50px; height: 50px; border-radius: 5px;">
+                        </td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.Date }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6;">{{ i.description }}</td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6; text-align: center;">
+                            <a href="{% url 'Editmementos' id=i.id %}" style="text-decoration: none;">
+                                <button style="padding: 6px 12px; background-color: #2980b9; color: white; border: none; border-radius: 6px; cursor: pointer;">✏️ Edit</button>
+                            </a>
+                        </td>
+                        <td style="padding: 10px; border: 1px solid #dee2e6; text-align: center;">
+                            <a href="{% url 'mementodelete' id=i.id %}" style="text-decoration: none;">
+                                <button style="padding: 6px 12px; background-color: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer;">🗑️ Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

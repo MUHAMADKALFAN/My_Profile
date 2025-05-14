@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latest Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .profile-card {
+      background-color: white;
+      width: 300px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .profile-card img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .profile-card h2 {
+      margin: 10px 0 5px;
+    }
+    .profile-card p {
+      color: #777;
+      margin: 5px 0;
+    }
+    .profile-card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: white;
+      background-color: #007bff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+    .profile-card a:hover {
+      background-color: #0056b3;
+    }
+    .home-button {
+      margin-top: 20px;
+      background-color: #28a745;
+    }
+    .home-button:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+
+  {% with latest=data2.last %}
+  <div class="profile-card">
+    <img src="{{ latest.image.url }}" alt="Profile Photo">
+    <h2>{{ latest.Name }}</h2>
+    <p>Email: <a href="mailto:{{ latest.Email }}">{{ latest.Email }}</a></p>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to={{ latest.Email }}" target="_blank">
+      Send Email
+    </a>
+    <br>
+    <a href="/" class="home-button">Go to Home Page</a>
+  </div>
+  {% endwith %}
+
+</body>
+</html>
