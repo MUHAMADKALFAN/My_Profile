@@ -3,7 +3,7 @@ from  . import views
 
 
 urlpatterns = [
-    path('',views.Useradmin,name="Useradmin"),
+    path('Useradmin',views.Useradmin,name="Useradmin"),
     path('addmemento',views.addmemento,name="addmemento"),
     path('Viewachievements',views.Viewachievements,name="Viewachievements"),
     path('Momentofoms',views.Momentofoms,name="Momentofoms"),
