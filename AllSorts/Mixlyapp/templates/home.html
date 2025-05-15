@@ -172,6 +172,16 @@
 }
 
 </style>
+<style>
+  .success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+}
+</style>
 </head>
 <body>	
 	<!-- Navigation -->
@@ -488,12 +498,18 @@
 
       <div class="footer-contact-form">
         <h5>Contact Form</h5>
-        <form class="contact-form" action="{% url 'customerform' %}" method="post" enctype="multipart/form-data">
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <p class="success-message">{{ message }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <form class="contact-form" action="{% url 'customerform' %}" method="post">
           {% csrf_token %}
-          <div class="form-group">
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="email" name="Email" placeholder="Your Email" required>
-          </div>
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
           <textarea name="Message" placeholder="Your message here..." required></textarea>
           <button type="submit" class="submit-button">Send Message</button>
         </form>
