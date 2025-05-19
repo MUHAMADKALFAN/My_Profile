@@ -70,5 +70,5 @@ MUHAMAD KALFAN.K
 
 def singleview(request,id):
     data= Momentodata.objects.filter(id=id)
-    return render(request, 'single_view.html', {'data': data})
+    return render(request, 'Single_view.html', {'data': data})
 

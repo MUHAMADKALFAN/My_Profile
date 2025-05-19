@@ -185,31 +185,16 @@
 </head>
 <body>	
 	<!-- Navigation -->
-	<nav class="site-navigation">
-		<div class="site-navigation-inner site-container">
-			<img src="{% static 'images/site-logo.png' %}" alt="site logo">
-			<!-- <div class="main-navigation">
-				<!-- <ul class="main-navigation__ul">
-					<li><a href="#">Homepage</a></li>
-					<li><a href="#">Page 1</a></li>
-					<li><a href="#">Page 2</a></li>
-					<li><a href="#">Page 3</a></li>
-					<li><a href="#">Page 4</a></li>
-				</ul> -->
-			</div> -->
-			<div id="myBtn" class="burger-container" onclick="myFunction(this)">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-			<script>
-				function myFunction(x) {
-					x.classList.toggle("change");
-				}
-			</script>
-
-		</div>
-	</nav>
+  <nav class="site-navigation pt-0">
+    <div class="site-navigation-inner site-container">
+      <img src="{% static 'images\muhamad-kalfank-high-resolution-logo-removebg-preview.png'%}" style="width:50px;height:auto;display:block;" alt="logo">
+      <div id="myBtn" class="burger-container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>
+  </nav>
 	<!-- Navigation end -->
 
 	<!-- Top banner -->
@@ -322,42 +307,49 @@
 	  
 	<!-- About me end -->
 
-	<section class="ftco-section bg-light" style="padding: 60px 0;">
-		<div class="site-container" style="max-width: 1200px; margin: auto;">
-			<h2 class="universal-h2 universal-h2-bckg" style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: bold;">Certificate details</h2>
-			<div class="blog-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
-				{% for i in data %}
-				<div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-					
-					<div>
-						<img src="{{i.image.url}}" class="card-img-top cert-img" alt="..." 
-						style="width: 100%; height: 220px; object-fit: cover; transition: all 0.3s ease; cursor: pointer;"
-            			onclick="showModal('{{i.image.url}}')">
-						<div class="card-body" style="padding: 20px;">
-							<h3 class="card-title" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">{{i.Certificatename}}</h3>
-							<p class="card-text" style="font-size: 0.95rem; color: #555;">{{i.Position}}<br>{{i.description}}</p>
-						</div>
-        			</div>
-					
-					<div style="padding: 0 20px 20px;">
-						<p class="card-text" style="font-size: 0.85rem; color: #999;">{{i.Date}}</p>
-						<a href="{% url 'singleview' id=i.id %}">
-							<button type="button" style="width: 100%; padding: 10px; background-color: #0056b3; color: white; border: none; border-radius: 6px; font-size: 0.95rem; transition: background 0.3s;"
-							onmouseover="this.style.backgroundColor='#004494'" 
-              				onmouseout="this.style.backgroundColor='#0056b3'">
-              				View Certificate
-            				</button>
-          				</a>
-        			</div>
-      			</div>
-      			{% endfor %}
-    		</div>
-  		</div>
-		
-		<div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
-			<img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow: 0 0 20px #000;">
-		</div>
-	</section>
+<section class="ftco-section bg-light" style="padding: 60px 0;">
+  <div class="site-container" style="max-width: 1200px; margin: auto; padding: 0 15px;">
+    <h2 class="universal-h2 universal-h2-bckg" style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: bold;">Certificate details</h2>
+
+    <div class="blog-grid" style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    ">
+      {% for i in data %}
+      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        
+        <div>
+          <img src="{{i.image.url}}" class="card-img-top cert-img" alt="Certificate Image" 
+               style="width: 100%; height: 220px; object-fit: cover; transition: all 0.3s ease; cursor: pointer;"
+               onclick="showModal('{{i.image.url}}')">
+          <div class="card-body" style="padding: 20px;">
+            <h3 class="card-title" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">{{i.Certificatename}}</h3>
+            <p class="card-text" style="font-size: 0.95rem; color: #555;">{{i.Position}}<br>{{i.description}}</p>
+          </div>
+        </div>
+
+        <div style="padding: 0 20px 20px;">
+          <p class="card-text" style="font-size: 0.85rem; color: #999;">{{i.Date}}</p>
+          <a href="{% url 'singleview' id=i.id %}">
+            <button type="button" style="width: 100%; padding: 10px; background-color: #0056b3; color: white; border: none; border-radius: 6px; font-size: 0.95rem; transition: background 0.3s;"
+              onmouseover="this.style.backgroundColor='#004494'" 
+              onmouseout="this.style.backgroundColor='#0056b3'">
+              View Certificate
+            </button>
+          </a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+    <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow: 0 0 20px #000;">
+  </div>
+</section>
 
 	
 	<!-- Counter -->
@@ -481,7 +473,7 @@
     <div class="footer-inner">
       <div class="footer-info">
         <div class="footer-info__left">
-          <img src="{% static 'images/DSC_7966 copy (1).jpg' %}" alt="About me image" class="footer-img">
+          <img src="{% static 'images\muhamad-kalfank-high-resolution-logo (1).png' %}" alt="About me image" class="footer-img">
           <!-- <p><a href="/about">Read more about me</a></p> -->
         </div>
         <div class="footer-info__right">
