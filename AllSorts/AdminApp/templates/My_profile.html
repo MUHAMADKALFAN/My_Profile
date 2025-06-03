@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Latest Profile</title>
@@ -13,6 +14,7 @@
       align-items: center;
       height: 100vh;
     }
+
     .profile-card {
       background-color: white;
       width: 300px;
@@ -21,17 +23,21 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
+
     .profile-card img {
       width: 100px;
       border-radius: 50%;
     }
+
     .profile-card h2 {
       margin: 10px 0 5px;
     }
+
     .profile-card p {
       color: #777;
       margin: 5px 0;
     }
+
     .profile-card a {
       display: inline-block;
       margin-top: 10px;
@@ -42,18 +48,22 @@
       border-radius: 6px;
       transition: background-color 0.3s;
     }
+
     .profile-card a:hover {
       background-color: #0056b3;
     }
+
     .home-button {
       margin-top: 20px;
       background-color: #28a745;
     }
+
     .home-button:hover {
       background-color: #1e7e34;
     }
   </style>
 </head>
+
 <body>
 
   {% with latest=data2.last %}
@@ -70,4 +80,5 @@
   {% endwith %}
 
 </body>
+
 </html>

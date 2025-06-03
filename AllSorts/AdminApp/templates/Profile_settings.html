@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +11,27 @@
       background-color: #f4f4f4;
       padding: 40px;
     }
+
     .profile-form {
       background-color: #fff;
       padding: 20px;
       max-width: 400px;
       margin: auto;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
     .profile-form h2 {
       margin-bottom: 20px;
       text-align: center;
     }
+
     .profile-form label {
       display: block;
       margin-bottom: 6px;
       font-weight: bold;
     }
+
     .profile-form input[type="text"],
     .profile-form input[type="email"],
     .profile-form input[type="file"] {
@@ -36,6 +41,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     .profile-form button {
       width: 100%;
       padding: 10px;
@@ -45,17 +51,19 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
     .profile-form button:hover {
       background-color: #0056b3;
     }
   </style>
 </head>
+
 <body>
 
   <form class="profile-form" action="{% url 'profileform' %}" method="POST" enctype="multipart/form-data">
     <h2>Profile Settings</h2>
     {% csrf_token %}
-    
+
     <label for="name">Name</label>
     <input type="text" id="Name" name="Name" required>
 
@@ -69,4 +77,5 @@
   </form>
 
 </body>
+
 </html>

@@ -1,17 +1,19 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/slick.css' %}">
-	<title>Author</title>
-	<script>
-	// Hover image effects
-	const images = document.querySelectorAll('.cert-img');
-	images.forEach(img => {
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'css/stylehome.css' %}">
+  <title>Author</title>
+  <script>
+    // Hover image effects
+    const images = document.querySelectorAll('.cert-img');
+    images.forEach(img => {
       img.addEventListener('mouseenter', () => {
         img.style.filter = 'grayscale(60%)';
         img.style.transform = 'scale(1.05)';
@@ -42,8 +44,9 @@
         setTimeout(() => img.style.opacity = 1, 100);
       });
     });
-	</script>
-	 <script>
+  </script>
+
+  <script>
     // Color rotation setup
     const colors = ['#007bff', '#28a745', '#dc3545', '#6f42c1', '#fd7e14'];
     let index = 0;
@@ -69,125 +72,24 @@
       bioBtn.style.boxShadow = `0 4px 10px ${newColor}40`;
     }, 3000);
   </script>
-   <script>
+
+  <script>
     function showModal(src) {
       document.getElementById("modalImage").src = src;
       document.getElementById("imgModal").style.display = "flex";
     }
-    document.getElementById("imgModal").onclick = function() {
+    document.getElementById("imgModal").onclick = function () {
       this.style.display = "none";
     };
   </script>
-  <!-- Subtle Animation -->
-<style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-<style>
-	.site-footer {
-  background-color: #111;
-  color: #eee;
-  padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-inner,
-.footer-bottom-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.footer-info__left,
-.footer-info__right,
-.footer-contact-form {
-  flex: 1 1 300px;
-}
-
-.footer-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  transform: perspective(600px) rotateY(3deg);
-  transition: transform 0.3s ease;
-}
-
-.footer-img:hover {
-  transform: perspective(600px) rotateY(0deg) scale(1.02);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 2px 20px rgba(0, 128, 255, 0.3);
-}
-
-.submit-button {
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #4caf50, #2196f3);
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  transform: perspective(500px) translateZ(10px);
-  transition: transform 0.3s ease;
-}
-
-.submit-button:hover {
-  transform: perspective(500px) translateZ(20px);
-  box-shadow: 0 5px 20px rgba(0, 255, 128, 0.5);
-}
-
-.social-icons img {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px;
-  transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2) rotate(5deg);
-}
-
-</style>
-<style>
-  .success-message {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #c3e6cb;
-  border-radius: 4px;
-}
-</style>
 </head>
-<body>	
-	<!-- Navigation -->
+
+<body>
+  <!-- Navigation -->
   <nav class="site-navigation pt-0">
     <div class="site-navigation-inner site-container">
-      <img src="{% static 'images\muhamad-kalfank-high-resolution-logo-removebg-preview.png'%}" style="width:50px;height:auto;display:block;" alt="logo">
+      <img src="{% static 'images\muhamad-kalfank-high-resolution-logo-removebg-preview.png'%}"
+        style="width:50px;height:auto;display:block;" alt="logo">
       <!-- <div id="myBtn" class="burger-container" onclick="myFunction(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -195,38 +97,65 @@
       </div> -->
     </div>
   </nav>
-	<!-- Navigation end -->
+  <!-- Navigation end -->
 
-	<!-- Top banner -->
-	<section class="fh5co-top-banner" style="background: url('{% static 'images/banner-bg.jpg' %}') center/cover no-repeat; padding: 80px 20px;">
-		<div class="top-banner__inner site-container" style="display: flex;flex-wrap: wrap;align-items: center;justify-content: center;max-width: 1200px;margin: 0 auto;gap: 40px;">
-			<!-- Image Section -->
-			<div class="top-banner__image" style="flex: 1 1 400px; text-align: center;">
-				<img id="profileImage" src="{% static 'images/DSC_7966 copy (1).jpg' %}" alt="author image" style="width: 100%;max-width: 450px;height: 550px;object-fit: cover;border-radius: 20px;box-shadow: 0 10px 30px rgba(0,0,0,0.1);transition: transform 0.5s ease-in-out;">
-			</div>
-			<!-- Text Section -->
-			<div class="top-banner__text" style="flex: 1 1 400px;">
-				<div class="top-banner__text-up" style="margin-bottom: 10px;">
-					<span id="introText" style="font-weight: 600; font-size: 1rem;">Hello! I'm</span>
-					<h2 style="font-size: 2.5rem; font-weight: bold; margin: 5px 0;" id="name">Muhamad</h2>
-				</div>
-				<div class="top-banner__text-down" style="margin-bottom: 20px;">
-					<h2 style="font-size: 2.5rem; font-weight: bold;" id="surname">Kalfan.K</h2>
-					<span style="font-size: 1rem; display: block; margin-top: 10px;" id="roles">
-						Python Developer • Full Stack Web Developer • Front-End • Back-End
-					</span>
-				</div>
-				<p style="font-size: 1rem; color: #555; line-height: 1.6;">This is my personal portfolio. Here you can find my projects and achievements.</p>
-				<!-- <a href="#" id="bioBtn" style="display: inline-block;margin-top: 20px;padding: 12px 24px;background-color: #007bff;color: #fff;text-decoration: none;border-radius: 8px;font-weight: 600;box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor=currentColor">Read bio &gt;</a> -->
-			</div>
-		</div>
-	</section>
+  <section class="fh5co-top-banner" style="background-color: #0d0d0d; padding: 80px 20px;">
+    <div class="top-banner__inner site-container"
+      style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: 0 auto; gap: 40px;">
 
-	<!-- Top banner end -->
+      <!-- Image Slideshow Section -->
+      <div class="top-banner__image" style="flex: 1 1 400px; text-align: center; perspective: 1000px;">
+        <div class="slideshow-container">
+          <img class="slide-img active" src="{% static 'images/DSC_7966 copy (1).jpg' %}" alt="Slide 1">
+          <img class="slide-img" src="{% static 'images\DSC_7966_copy-removebg-preview (3) (1).png' %}" alt="Slide 2">
+          <img class="slide-img" src="{% static 'images/FAMILI (7).jpg' %}" alt="Slide 3">
+        </div>
+      </div>
 
-	<!-- About me -->
-<section class="about-me" style="padding: 80px 20px; background: #f9f9f9; font-family: 'Segoe UI', sans-serif;">
-  <div class="container" style="
+      <!-- Text Section -->
+      <div class="top-banner__text" style="flex: 1 1 400px;">
+        <div class="top-banner__text-up" style="margin-bottom: 10px;">
+          <span id="introText" style="font-weight: 600; font-size: 1rem; color: white;">Hello! I'm</span>
+          <h2 style="font-size: 2.5rem; font-weight: bold; margin: 5px 0; color: white;" id="name">Muhamad</h2>
+        </div>
+        <div class="top-banner__text-down" style="margin-bottom: 20px;">
+          <h2 style="font-size: 2.5rem; font-weight: bold; color: white;" id="surname">Kalfan.K</h2>
+          <span style="font-size: 1rem; display: block; margin-top: 10px; color: white;" id="roles">
+            Python Developer • Full Stack Web Developer • Front-End • Back-End
+          </span>
+        </div>
+        <p style="font-size: 1rem; color: #ccc; line-height: 1.6;">This is my personal portfolio. Here you can find my
+          projects and achievements.</p>
+      </div>
+    </div>
+
+
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide-img");
+
+      function showSlide() {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+        });
+
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+      }
+
+      // Initial slide show setup
+      slides[slideIndex].classList.add("active");
+
+      // Change every 5 seconds
+      setInterval(showSlide, 5000);
+    </script>
+  </section>
+
+  <!-- Top banner end -->
+
+  <!-- About me -->
+  <section class="about-me" style="padding: 80px 20px; background: #f9f9f9; font-family: 'Segoe UI', sans-serif;">
+    <div class="container" style="
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -235,8 +164,8 @@
     align-items: flex-start;
   ">
 
-    <!-- Image + Name (Left Side) -->
-    <article style="
+      <!-- Image + Name (Left Side) -->
+      <article style="
       flex: 1 1 350px;
       text-align: center;
       background: #ffffff;
@@ -247,20 +176,21 @@
       transition: transform 0.5s ease;
     " onmouseover="this.style.transform='rotateY(5deg)'" onmouseout="this.style.transform='rotateY(0deg)'">
 
-      <!-- Image with 3D effect -->
-      <div style="margin-bottom: 20px; transition: transform 0.5s ease;">
-        <img src="{% static 'images/FAMILI (7).jpg' %}" alt="about me profile picture" style="
+        <!-- Image with 3D effect -->
+        <div style="margin-bottom: 20px; transition: transform 0.5s ease;">
+          <img src="{% static 'images/FAMILI (7).jpg' %}" alt="about me profile picture" style="
           width: 100%;
           max-width: 300px;
           border-radius: 1rem;
           box-shadow: 0 8px 24px rgba(0,0,0,0.1);
           transition: transform 0.5s ease;
           transform-style: preserve-3d;
-        " onmouseover="this.style.transform='scale(1.05) rotateY(8deg)'" onmouseout="this.style.transform='scale(1) rotateY(0deg)'">
-      </div>
+        " onmouseover="this.style.transform='scale(1.05) rotateY(8deg)'"
+            onmouseout="this.style.transform='scale(1) rotateY(0deg)'">
+        </div>
 
-      <!-- Name with 3D text effect -->
-      <h2 style="
+        <!-- Name with 3D text effect -->
+        <h2 style="
         font-size: 1.8rem;
         font-weight: 700;
         color: #222;
@@ -268,13 +198,13 @@
         transform: translateZ(20px);
         transition: transform 0.5s ease;
       " onmouseover="this.style.transform='translateZ(40px)'" onmouseout="this.style.transform='translateZ(20px)'">
-        Muhamad Kalfan
-      </h2>
-      <p style="color: #666; font-size: 1rem; margin-top: 10px;">Full-Stack Web Developer</p>
-    </article>
+          Muhamad Kalfan
+        </h2>
+        <p style="color: #666; font-size: 1rem; margin-top: 10px;">Full-Stack Web Developer</p>
+      </article>
 
-    <!-- About Text (Right Side) -->
-    <div style="
+      <!-- About Text (Right Side) -->
+      <div style="
       flex: 2 1 600px;
       background: #ffffff;
       border-radius: 1rem;
@@ -282,78 +212,87 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       animation: fadeInUp 1s ease-out;
     ">
-      <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 24px; color: #111;">About Me</h2>
-      <p style="color: #333; line-height: 1.8; margin-bottom: 20px;">
-        <strong>Hey, I'm Muhammad Kalfan</strong> — a full-stack web developer passionate about turning complex ideas into smooth digital solutions.
-        I specialize in building scalable, user-centered applications using Python and modern web technologies.
-      </p>
-      <p style="color: #333; line-height: 1.8; margin-bottom: 20px;">
-        My mission is simple: <em>code should serve people</em>. Whether I’m developing fast APIs, responsive interfaces, or scalable systems, I do it with empathy and intention. I believe great developers build great experiences, not just working code.
-      </p>
+        <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 24px; color: #111;">About Me</h2>
+        <p style="color: #333; line-height: 1.8; margin-bottom: 20px;">
+          <strong>Hey, I'm Muhammad Kalfan</strong> — a full-stack web developer passionate about turning complex ideas
+          into smooth digital solutions.
+          I specialize in building scalable, user-centered applications using Python and modern web technologies.
+        </p>
+        <p style="color: #333; line-height: 1.8; margin-bottom: 20px;">
+          My mission is simple: <em>code should serve people</em>. Whether I’m developing fast APIs, responsive
+          interfaces, or scalable systems, I do it with empathy and intention. I believe great developers build great
+          experiences, not just working code.
+        </p>
 
-      <h3 style="margin-top: 40px; margin-bottom: 10px; color: #007bff;">What I Believe</h3>
-      <ul style="padding-left: 20px; color: #444; line-height: 1.8;">
-        <li><strong>1. Start With the Problem:</strong> Understand why it matters before writing a line of code.</li>
-        <li><strong>2. Build with Empathy:</strong> Think like the user. Design for clarity, speed, and comfort.</li>
-        <li><strong>3. Grow Relentlessly:</strong> Constant learning keeps my work sharp and relevant.</li>
-      </ul>
+        <h3 style="margin-top: 40px; margin-bottom: 10px; color: #007bff;">What I Believe</h3>
+        <ul style="padding-left: 20px; color: #444; line-height: 1.8;">
+          <li><strong>1. Start With the Problem:</strong> Understand why it matters before writing a line of code.</li>
+          <li><strong>2. Build with Empathy:</strong> Think like the user. Design for clarity, speed, and comfort.</li>
+          <li><strong>3. Grow Relentlessly:</strong> Constant learning keeps my work sharp and relevant.</li>
+        </ul>
 
-      <p style="color: #333; margin-top: 20px;">
-        I take pride in writing clean, maintainable code and working collaboratively to bring powerful ideas to life—from wireframe to production.
-      </p>
+        <p style="color: #333; margin-top: 20px;">
+          I take pride in writing clean, maintainable code and working collaboratively to bring powerful ideas to
+          life—from wireframe to production.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
-	  
-	<!-- About me end -->
+  </section>
 
-<section class="ftco-section bg-light" style="padding: 60px 0;">
-  <div class="site-container" style="max-width: 1200px; margin: auto; padding: 0 15px;">
-    <h2 class="universal-h2 universal-h2-bckg" style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: bold;">Certificate details</h2>
+  <!-- About me end -->
 
-    <div class="blog-grid" style="
+  <section class="ftco-section bg-light" style="padding: 60px 0;">
+    <div class="site-container" style="max-width: 1200px; margin: auto; padding: 0 15px;">
+      <h2 class="universal-h2 universal-h2-bckg"
+        style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; font-weight: bold;">Certificate details</h2>
+
+      <div class="blog-grid" style="
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     ">
-      {% for i in data %}
-      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        
-        <div>
-          <img src="{{i.image.url}}" class="card-img-top cert-img" alt="Certificate Image" 
-               style="width: 100%; height: 220px; object-fit: cover; transition: all 0.3s ease; cursor: pointer;"
-               onclick="showModal('{{i.image.url}}')">
-          <div class="card-body" style="padding: 20px;">
-            <h3 class="card-title" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">{{i.Certificatename}}</h3>
-            <p class="card-text" style="font-size: 0.95rem; color: #555;">{{i.Position}}<br>{{i.description}}</p>
+        {% for i in data %}
+        <div class="card"
+          style="display: flex; flex-direction: column; justify-content: space-between; background-color: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+
+          <div>
+            <img src="{{i.image.url}}" class="card-img-top cert-img" alt="Certificate Image"
+              style="width: 100%; height: 220px; object-fit: cover; transition: all 0.3s ease; cursor: pointer;"
+              onclick="showModal('{{i.image.url}}')">
+            <div class="card-body" style="padding: 20px;">
+              <h3 class="card-title" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">
+                {{i.Certificatename}}</h3>
+              <p class="card-text" style="font-size: 0.95rem; color: #555;">{{i.Position}}<br>{{i.description}}</p>
+            </div>
           </div>
-        </div>
 
-        <div style="padding: 0 20px 20px;">
-          <p class="card-text" style="font-size: 0.85rem; color: #999;">{{i.Date}}</p>
-          <a href="{% url 'singleview' id=i.id %}">
-            <button type="button" style="width: 100%; padding: 10px; background-color: #0056b3; color: white; border: none; border-radius: 6px; font-size: 0.95rem; transition: background 0.3s;"
-              onmouseover="this.style.backgroundColor='#004494'" 
-              onmouseout="this.style.backgroundColor='#0056b3'">
-              View Certificate
-            </button>
-          </a>
-        </div>
+          <div style="padding: 0 20px 20px;">
+            <p class="card-text" style="font-size: 0.85rem; color: #999;">{{i.Date}}</p>
+            <a href="{% url 'singleview' id=i.id %}">
+              <button type="button"
+                style="width: 100%; padding: 10px; background-color: #0056b3; color: white; border: none; border-radius: 6px; font-size: 0.95rem; transition: background 0.3s;"
+                onmouseover="this.style.backgroundColor='#004494'" onmouseout="this.style.backgroundColor='#0056b3'">
+                View Certificate
+              </button>
+            </a>
+          </div>
 
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div id="imgModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
-    <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow: 0 0 20px #000;">
-  </div>
-</section>
+    <!-- Modal -->
+    <div id="imgModal"
+      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+      <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:8px; box-shadow: 0 0 20px #000;">
+    </div>
+  </section>
 
-	
-	<!-- Counter -->
-	<!-- <div class="fh5co-counter counters">
+
+  <!-- Counter -->
+  <!-- <div class="fh5co-counter counters">
 		<div class="counter-inner site-container">
 			<div class="single-count">
 				<span class="count" data-count="50">0</span>
@@ -385,10 +324,10 @@
 			</div>
 		</div>
 	</div> -->
-	<!-- Counter -->
+  <!-- Counter -->
 
-	<!-- Blog -->
-	<!-- <section class="fh5co-blog">
+  <!-- Blog -->
+  <!-- <section class="fh5co-blog">
 		<div class="site-container">
 			<h2 class="universal-h2 universal-h2-bckg">My Blog</h2>
 			<div class="blog-slider blog-inner">
@@ -425,10 +364,10 @@
 			</div>
 		</div>
 	</section> -->
-	<!-- Blog end -->
+  <!-- Blog end -->
 
-	<!-- Quotes -->
-	<!-- <section class="fh5co-quotes">
+  <!-- Quotes -->
+  <!-- <section class="fh5co-quotes">
 		<div class="site-container">
 			<div class="about-me-slider">
 				<div>
@@ -448,86 +387,96 @@
 			</div>
 		</div>
 	</section> -->
-	<!-- Quotes end -->
+  <!-- Quotes end -->
 
-	<!-- Social -->
-	<section class="fh5co-social">
-		<div class="site-container">
-			<div class="social">
-				<h5>Follow me!!</h5>
-				<div class="social-icons">
-					<a href="https://x.com/kalfan_k49848" target="_blank"><img src="{% static 'images/social-twitter.png' %}" alt="social icon"></a>
-					<a href="https://www.linkedin.com/in/muhamad-kalfan-k-66074b282/" target="_blank"><img src="{% static 'images\icons8-linkedin-48.png' %}" alt="social icon"></a>
-					<a href="https://github.com/MUHAMADKALFAN" target="_blank"><img src="{% static 'images\icons8-github-48.png' %}" alt="social icon"></a>
-					<a href="https://wa.me/+919947883330" target="_blank"><img src="{% static 'images\icons8-whatsapp-48.png' %}" alt="social icon"></a>
-				</div>
-				<h5>Share it!</h5>
-			</div>
-		</div>
-	</section>
-	<!-- Social -->
-
-	<!-- Footer -->
-	<footer class="site-footer">
-  <div class="site-container">
-    <div class="footer-inner">
-      <div class="footer-info">
-        <div class="footer-info__left">
-          <img src="{% static 'images\muhamad-kalfank-high-resolution-logo (1).png' %}" alt="About me image" class="footer-img">
-          <!-- <p><a href="/about">Read more about me</a></p> -->
+  <!-- Social -->
+  <section class="fh5co-social">
+    <div class="site-container">
+      <div class="social">
+        <h5>Follow me!!</h5>
+        <div class="social-icons">
+          <a href="https://x.com/kalfan_k49848" target="_blank"><img src="{% static 'images/social-twitter.png' %}"
+              alt="social icon"></a>
+          <a href="https://www.linkedin.com/in/muhamad-kalfan-k-66074b282/" target="_blank"><img
+              src="{% static 'images\icons8-linkedin-48.png' %}" alt="social icon"></a>
+          <a href="https://github.com/MUHAMADKALFAN" target="_blank"><img
+              src="{% static 'images\icons8-github-48.png' %}" alt="social icon"></a>
+          <a href="https://wa.me/+919947883330" target="_blank"><img src="{% static 'images\icons8-whatsapp-48.png' %}"
+              alt="social icon"></a>
         </div>
-        <div class="footer-info__right">
-          <h5>Get In Touch</h5>
-          <p class="footer-phone">📞 +91 9947883330</p>
-          <p>📧 <a href="mailto:kalfasmuhammad@gmail.com">kalfasmuhammad@gmail.com</a></p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/muhamad-kalfan-k-66074b282/" target="_blank"><img src="{% static 'images\icons8-linkedin-48.png' %}" alt="Twitter"></a>
-            <a href="https://github.com/MUHAMADKALFAN" target="_blank"><img src="{% static 'images\icons8-github-48.png' %}" alt="Pinterest"></a>
-            <a href="https://wa.me/+919947883330" target="_blank"><img src="{% static 'images\icons8-whatsapp-48.png' %}" alt="YouTube"></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-contact-form">
-        <h5>Contact Form</h5>
-        {% if messages %}
-        <div class="messages">
-          {% for message in messages %}
-          <p class="success-message">{{ message }}</p>
-          {% endfor %}
-        </div>
-        {% endif %}
-        
-        <form class="contact-form" action="{% url 'customerform' %}" method="post">
-          {% csrf_token %}
-          <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="Email" placeholder="Your Email" required>
-          <textarea name="Message" placeholder="Your message here..." required></textarea>
-          <button type="submit" class="submit-button">Send Message</button>
-        </form>
+        <h5>Share it!</h5>
       </div>
     </div>
-  </div>
+  </section>
+  <!-- Social -->
 
-  <div class="footer-bottom">
-    <div class="site-container footer-bottom-inner">
-      <p>© 2019 Author | Design by <a href="https://freehtml5.co/" target="_blank">freehtml5.co</a> | All rights reserved.</p>
-      <!-- <div class="footer-bottom__img">
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-inner">
+        <div class="footer-info">
+          <div class="footer-info__left">
+            <img src="{% static 'images\muhamad-kalfank-high-resolution-logo (1).png' %}" alt="About me image"
+              class="footer-img">
+            <!-- <p><a href="/about">Read more about me</a></p> -->
+          </div>
+          <div class="footer-info__right">
+            <h5>Get In Touch</h5>
+            <p class="footer-phone">📞 +91 9947883330</p>
+            <p>📧 <a href="mailto:kalfasmuhammad@gmail.com">kalfasmuhammad@gmail.com</a></p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/muhamad-kalfan-k-66074b282/" target="_blank"><img
+                  src="{% static 'images\icons8-linkedin-48.png' %}" alt="Twitter"></a>
+              <a href="https://github.com/MUHAMADKALFAN" target="_blank"><img
+                  src="{% static 'images\icons8-github-48.png' %}" alt="Pinterest"></a>
+              <a href="https://wa.me/+919947883330" target="_blank"><img
+                  src="{% static 'images\icons8-whatsapp-48.png' %}" alt="YouTube"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-contact-form">
+          <h5>Contact Form</h5>
+          {% if messages %}
+          <div class="messages">
+            {% for message in messages %}
+            <p class="success-message">{{ message }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <form class="contact-form" action="{% url 'customerform' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" placeholder="Your message here..." required></textarea>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="site-container footer-bottom-inner">
+        <p>© 2019 Author | Design by <a href="https://freehtml5.co/" target="_blank">freehtml5.co</a> | All rights
+          reserved.</p>
+        <!-- <div class="footer-bottom__img">
         <img src="{% static 'images\mastercard_symbol_square_black.png' %}" style="width: 10%;height: 100px;" alt="Mastercard">
         <img src="{% static 'images/footer-paypal.png' %}" alt="PayPal">
         <img src="{% static 'images/footer-visa.png' %}" alt="Visa">
         <img src="{% static 'images/footer-fedex.png' %}" alt="FedEx">
         <img src="{% static 'images/footer-dhl.png' %}" alt="DHL">
       </div> -->
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-	<!-- Footer end -->
+  <!-- Footer end -->
 
-	<!-- Scripts -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/slick.min.js' %}"></script>
-	<script src="{% static 'js/main.js' %}"></script>
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/slick.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
+
 </html>
